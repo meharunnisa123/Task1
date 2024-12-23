@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: task1
-          image: <your-dockerhub-username>/task1:latest  # Use your Docker image
+          image: mehra608/task1:latest  # Use your Docker image
           ports:
             - containerPort: 8080
