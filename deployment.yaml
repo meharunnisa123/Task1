@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task1-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: task1
+  template:
+    metadata:
+      labels:
+        app: task1
+    spec:
+      containers:
+        - name: task1
+          image: <your-dockerhub-username>/task1:latest  # Use your Docker image
+          ports:
+            - containerPort: 8080
