@@ -13,7 +13,6 @@ var (
 	mu      sync.Mutex
 )
 
-// CounterHandler increments and returns the counter value.
 func CounterHandler(w http.ResponseWriter, r *http.Request) {
 	mu.Lock()
 	counter++
@@ -23,7 +22,6 @@ func CounterHandler(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(response)
 }
 
-// TimeHandler returns the current UTC time.
 func TimeHandler(w http.ResponseWriter, r *http.Request) {
 	response := map[string]string{"time": time.Now().UTC().Format(time.RFC3339)}
 	json.NewEncoder(w).Encode(response)
